@@ -1,65 +1,126 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import NextLink from 'next/link'
+import NextImage from 'next/image'
+import { ChakraProvider,
+  Box,
+  Text,
+  Link,
+  Grid,
+  Avatar,
+  Badge,
+  Flex,
+  Heading,
+  GridItem,
+  Button } from '@chakra-ui/react'
+import { ColorModeSwitcher } from "../components/ColorModeSwitcher";
+import { Raven } from '../components/Raven'
+import Socials from '../components/Socials'
 
-export default function Home() {
+function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Home page | Fatih Eğriboz</title>
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      {/* ---- */}
+      <ColorModeSwitcher
+        justifySelf="flex-end"
+        pos="absolute"
+        top="10px"
+        right="10px"
+      />
+      <Box pos="absolute">
+        <Heading p="15px 0 0 30px" fontSize="1.5em" fontWeight="800" as="h1">
+          FE
+        </Heading>
+      </Box>
+      <Grid
+        h={{ sm: 'auto', md: '100vh' }}
+        templateRows={{ sm: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
+        templateColumns={{ sm: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
+        gap={0}
+      >
+        <GridItem
+          rowSpan={{ sm: '4', md: '4' }}
+          colSpan={{ sm: '1', md: '2' }}
+          borderRight="1px"
+          className="border-color-mode-home-right"
+          pos="relative"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+          <Flex align="center" height="100vh" justify="center">
+            <Raven />
+          </Flex>
+        </GridItem>
+        <GridItem p="20px" rowSpan={{ sm: '1', md: '3' }}>
+          <Flex
+            align="flex-start"
+            justify="center"
+            direction="column"
+            height="100%"
+            p={{ sm: '0 0 60px', md: '0 0 0 0px' }}
+          >
+            <Text
+              fontSize="5.5em"
+              lineHeight="96px"
+              fontWeight="700"
+              maxW="12xl"
+            >
+              Say
+            </Text>
+            <Text
+              fontSize="5.5em"
+              lineHeight="96px"
+              fontWeight="700"
+              maxW="12xl"
+            >
+              Hello!
+            </Text>
+            <Link pl="5px" href="mailto:egriboz@gmail.com" isExternal>
+              egriboz@gmail.com
+            </Link>
+          </Flex>
+        </GridItem>
+        <GridItem
+          p="20px 20px 0px 20px"
+          rowSpan={{ sm: '1', md: '1' }}
+          borderTop="1px"
+          className="border-color-mode-home-top"
+        >
+          <Flex pt="10px">
+            <Avatar src="https://cdn.dribbble.com/users/127500/avatars/normal/95abd06772238d31c5ed208db45aa2d5.jpg" />
+            <Box ml="3">
+              <Text fontWeight="bold">
+                Fatih Eğriboz
+                <Badge ml="1" colorScheme="green"></Badge>
+              </Text>
+              <Text fontSize="sm" align="left">
+                Frontend Developer
+              </Text>
+            </Box>
+          </Flex>
+          <Text
+            mt="15px"
+            pl="60px"
+            pr="30px"
+            fontSize="md"
+            maxW="100%"
+            lineHeight="normal"
+          >
+            I work and play with design and code in hopes of making the kids
+            proud.
+          </Text>
+          <Socials
+            p="30px 15px 5px 50px"
+            twitter
+            instagram
+            github
+            behance
+            codepen
+          />
+        </GridItem>
+      </Grid>
+      {/* ---- */}
+    </>
   )
 }
+export default Home
