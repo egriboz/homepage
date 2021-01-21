@@ -13,12 +13,14 @@ import {
   Heading,
   GridItem,
   Button,
+  Code,
 } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "../components/ColorModeSwitcher";
 import { Raven } from "../components/Raven";
 import Socials from "../components/Socials";
+import { withRouter } from "next/router";
 
-function Home() {
+function Home(router) {
   return (
     <>
       <Head>
