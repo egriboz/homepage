@@ -1,9 +1,9 @@
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import SiteConfig from '../site.config'
+import NextDocument, { Html, Head, Main, NextScript } from "next/document";
+import SiteConfig from "../site.config";
 
 export default class MyDocument extends NextDocument {
   static getInitialProps(ctx) {
-    return NextDocument.getInitialProps(ctx)
+    return NextDocument.getInitialProps(ctx);
   }
 
   render() {
@@ -25,7 +25,24 @@ export default class MyDocument extends NextDocument {
           <meta name="twitter:url" content={SiteConfig.siteUrl} />
           <meta name="twitter:title" content={SiteConfig.title} />
           <meta name="twitter:description" content={SiteConfig.description} />
+
+          {/* pwa */}
+          <link rel="manifest" href="/manifest.json" />
+          <meta name="theme-color" content="#fff" />
+          <meta name="application-name" content={SiteConfig.title} />
+          <meta name="apple-mobile-web-app-title" content={SiteConfig.title} />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="default"
+          />
+          {/* ico */}
           <link rel="icon" href="/favicon.ico" />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/icons/apple-touch-icon.png"
+          />
           {/* analytic */}
           {SiteConfig.googleAnalytic && (
             <>
@@ -36,7 +53,7 @@ export default class MyDocument extends NextDocument {
               <script
                 type="text/javascript"
                 dangerouslySetInnerHTML={{
-                  __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${SiteConfig.googleAnalytic}');`
+                  __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${SiteConfig.googleAnalytic}');`,
                 }}
               />
             </>
@@ -48,6 +65,6 @@ export default class MyDocument extends NextDocument {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
