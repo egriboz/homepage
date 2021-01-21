@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import NextLink from 'next/link'
-import NextImage from 'next/image'
-import { ChakraProvider,
+import Head from "next/head";
+import NextLink from "next/link";
+
+import {
+  ChakraProvider,
   Box,
   Text,
   Link,
@@ -11,10 +12,11 @@ import { ChakraProvider,
   Flex,
   Heading,
   GridItem,
-  Button } from '@chakra-ui/react'
+  Button,
+} from "@chakra-ui/react";
 import { ColorModeSwitcher } from "../components/ColorModeSwitcher";
-import { Raven } from '../components/Raven'
-import Socials from '../components/Socials'
+import { Raven } from "../components/Raven";
+import Socials from "../components/Socials";
 
 function Home() {
   return (
@@ -23,26 +25,29 @@ function Home() {
         <title>Home page | Fatih Eğriboz</title>
       </Head>
       {/* ---- */}
-      <ColorModeSwitcher
+      <Box
+        zIndex="dropdown"
         justifySelf="flex-end"
         pos="absolute"
         top="10px"
         right="10px"
-      />
+      >
+        <ColorModeSwitcher />
+      </Box>
       <Box pos="absolute">
         <Heading p="15px 0 0 30px" fontSize="1.5em" fontWeight="800" as="h1">
           FE
         </Heading>
       </Box>
       <Grid
-        h={{ sm: 'auto', md: '100vh' }}
-        templateRows={{ sm: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
-        templateColumns={{ sm: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
+        h={{ sm: "400px", md: "100vh" }}
+        templateRows={{ sm: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
+        templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
         gap={0}
       >
         <GridItem
-          rowSpan={{ sm: '4', md: '4' }}
-          colSpan={{ sm: '1', md: '2' }}
+          rowSpan={{ sm: "4", md: "4" }}
+          colSpan={{ sm: "1", md: "2" }}
           borderRight="1px"
           className="border-color-mode-home-right"
           pos="relative"
@@ -51,13 +56,13 @@ function Home() {
             <Raven />
           </Flex>
         </GridItem>
-        <GridItem p="20px" rowSpan={{ sm: '1', md: '3' }}>
+        <GridItem p="20px" rowSpan={{ sm: "1", md: "3" }}>
           <Flex
             align="flex-start"
             justify="center"
             direction="column"
             height="100%"
-            p={{ sm: '0 0 60px', md: '0 0 0 0px' }}
+            p={{ sm: "0 0 60px", md: "0 0 0 0px" }}
           >
             <Text
               fontSize="5.5em"
@@ -82,7 +87,7 @@ function Home() {
         </GridItem>
         <GridItem
           p="20px 20px 0px 20px"
-          rowSpan={{ sm: '1', md: '1' }}
+          rowSpan={{ sm: "1", md: "1" }}
           borderTop="1px"
           className="border-color-mode-home-top"
         >
@@ -121,6 +126,6 @@ function Home() {
       </Grid>
       {/* ---- */}
     </>
-  )
+  );
 }
-export default Home
+export default Home;
