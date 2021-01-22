@@ -7,7 +7,7 @@ export default function Raven() {
 
   return (
     <Box filter={filterImage}>
-      <video autoPlay loop muted>
+      <video onContextMenu={(e) => e.preventDefault()} autoPlay loop muted>
         <source src="/raven.mp4" type="video/mp4" />
       </video>
     </Box>
