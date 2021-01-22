@@ -8,13 +8,6 @@ export function Raven() {
   const [data, dataSet] = React.useState([]);
   const [dataLoading, dataLoadingSet] = React.useState(true);
 
-  // const getImage = fetch("https://egriboz.com/assets/img/logo.gif");
-  // getImage.then((response, error) => {
-  //   console.log(response.status);
-  //   dataSet(response.statuses);
-  //   dataLoadingSet(false);
-  // });
-
   useEffect(() => {
     const getImage = fetch("https://egriboz.com/assets/img/logo.gif");
     getImage.then((response) => {

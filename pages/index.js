@@ -1,5 +1,4 @@
 import Head from "next/head";
-import NextLink from "next/link";
 
 import {
   ChakraProvider,
@@ -12,15 +11,12 @@ import {
   Flex,
   Heading,
   GridItem,
-  Button,
-  Code,
 } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "../components/ColorModeSwitcher";
-import { Raven } from "../components/Raven";
+import RavenVideo from "../components/RavenVideo";
 import Socials from "../components/Socials";
-import { withRouter } from "next/router";
 
-function Home(router) {
+function Home() {
   return (
     <>
       <Head>
@@ -36,8 +32,8 @@ function Home(router) {
       >
         <ColorModeSwitcher />
       </Box>
-      <Box pos="absolute">
-        <Heading p="15px 0 0 30px" fontSize="1.5em" fontWeight="800" as="h1">
+      <Box pos="absolute" zIndex="dropdown">
+        <Heading p="15px 0 0 15px" fontSize="1.5em" fontWeight="800" as="h1">
           FE
         </Heading>
       </Box>
@@ -55,7 +51,7 @@ function Home(router) {
           pos="relative"
         >
           <Flex align="center" height="100vh" justify="center">
-            <Raven />
+            <RavenVideo />
           </Flex>
         </GridItem>
         <GridItem p="20px" rowSpan={{ sm: "1", md: "3" }}>
