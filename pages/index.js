@@ -15,14 +15,17 @@ import {
 import { ColorModeSwitcher } from "../components/ColorModeSwitcher";
 import RavenVideo from "../components/RavenVideo";
 import Socials from "../components/Socials";
+import SiteConfig from "../site.config";
+const AvatarImage =
+  "https://cdn.dribbble.com/users/127500/avatars/normal/95abd06772238d31c5ed208db45aa2d5.jpg";
 
 function Home() {
   return (
     <>
       <Head>
-        <title>Home page | Fatih Eğriboz</title>
+        <title>Home | {SiteConfig.author.name}</title>
       </Head>
-      {/* ---- */}
+
       <Box
         zIndex="dropdown"
         justifySelf="flex-end"
@@ -34,7 +37,7 @@ function Home() {
       </Box>
       <Box pos="absolute" zIndex="dropdown">
         <Heading p="15px 0 0 15px" fontSize="1.5em" fontWeight="800" as="h1">
-          FE
+          {SiteConfig.author.shortName}
         </Heading>
       </Box>
       <Grid
@@ -78,8 +81,12 @@ function Home() {
             >
               Hello!
             </Text>
-            <Link pl="5px" href="mailto:egriboz@gmail.com" isExternal>
-              egriboz@gmail.com
+            <Link
+              pl="5px"
+              href={`mailto:${SiteConfig.author.email}`}
+              isExternal
+            >
+              {SiteConfig.author.email}
             </Link>
           </Flex>
         </GridItem>
@@ -90,14 +97,14 @@ function Home() {
           className="border-color-mode-home-top"
         >
           <Flex pt="10px">
-            <Avatar src="https://cdn.dribbble.com/users/127500/avatars/normal/95abd06772238d31c5ed208db45aa2d5.jpg" />
+            <Avatar src={AvatarImage} />
             <Box ml="3">
               <Text fontWeight="bold">
-                Fatih Eğriboz
+                {SiteConfig.author.name}
                 <Badge ml="1" colorScheme="green"></Badge>
               </Text>
               <Text fontSize="sm" align="left">
-                Frontend Developer
+                {SiteConfig.author.title}
               </Text>
             </Box>
           </Flex>
@@ -122,7 +129,6 @@ function Home() {
           />
         </GridItem>
       </Grid>
-      {/* ---- */}
     </>
   );
 }
