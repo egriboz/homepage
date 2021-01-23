@@ -11,8 +11,8 @@ const theme = extendTheme({
   styles: {
     global: (props) => ({
       body: {
-        color: mode("#000100", "#ffffff")(props),
-        bg: mode("#ffffff", "#000100")(props),
+        color: mode("#111111", "#ffffff")(props),
+        bg: mode("#ffffff", "#111111")(props),
       },
       "div.border-color-mode-home-right": {
         borderRightColor: mode("#dadce0", "#222222")(props),
