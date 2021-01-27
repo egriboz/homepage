@@ -10,9 +10,7 @@ const nextConfig = (phase) => {
       path: "/",
     },
     env: {
-      API_URL: isDev
-        ? "http://localhost:3000"
-        : "https://homepage-rose-sigma.vercel.app",
+      API_URL: isDev ? "http://localhost:3000" : "https://egriboz.com",
     },
     pwa: {
       dest: "public",
