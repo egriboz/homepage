@@ -37,7 +37,7 @@ function Home() {
         <ColorModeSwitcher />
       </Box>
       <Box pos="absolute" zIndex="dropdown">
-        <Heading p="15px 0 0 15px" fontSize="1.5em" fontWeight="800" as="h1">
+        <Heading p="15px 0 0 15px" fontSize="1.1em" fontWeight="800" letterSpacing="2px" as="h1">
           {SiteConfig.author.shortName}
         </Heading>
       </Box>
