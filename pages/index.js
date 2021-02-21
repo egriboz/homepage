@@ -83,8 +83,9 @@ function Home() {
               Hello!
             </Text>
             <Link
+              pt="30px"
               pl="5px"
-              mb="50px"
+              mb="30px"
               href={`mailto:${SiteConfig.author.email}`}
               isExternal
             >
