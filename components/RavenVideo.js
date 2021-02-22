@@ -29,7 +29,7 @@ export default function Raven() {
       }
       if (!isIE11()) {
         const player = document.getElementById('player');
-        player.src = supportsHEVCAlpha() ? '/raven/raven-HEVC-safari.mov': '/raven/raven.webm';
+        player.src = supportsHEVCAlpha() ? '/raven.mp4': '/raven/raven.webm';
       } 
       //
   }, []);
