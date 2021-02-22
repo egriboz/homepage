@@ -135,7 +135,6 @@ function Home() {
             github
             behance
             codepen
-            envato
           />
         </GridItem>
       </Grid>
