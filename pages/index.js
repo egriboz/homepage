@@ -13,7 +13,7 @@ import {
   GridItem,
 } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "../components/ColorModeSwitcher";
-// import RavenVideo from "../components/RavenVideo";
+import RavenVideo from "../components/RavenVideo";
 import Raven from "../components/Raven";
 import Socials from "../components/Socials";
 import SiteConfig from "../site.config";
@@ -48,7 +48,7 @@ function Home() {
         </Heading>
       </Box>
       <Grid
-        h={{ sm: "400px", md: "100vh" }}
+        h={{ sm: "auto", md: "100vh" }}
         templateRows={{ sm: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
         templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
         gap={0}
@@ -61,7 +61,8 @@ function Home() {
           pos="relative"
         >
           <Flex align="center" height="100vh" justify="center">
-            <Raven />
+            {/* <Raven /> */}
+            <RavenVideo/>
           </Flex>
         </GridItem>
         <GridItem p="20px" rowSpan={{ sm: "1", md: "3" }}>
@@ -129,12 +130,13 @@ function Home() {
             proud.
           </Text>
           <Socials
-            p="30px 15px 5px 50px"
+            p={{ base: "50px 0px 50px 10px", md: "30px 0px 5px 50px" }}
             twitter
             instagram
             github
             behance
             codepen
+            envato
           />
         </GridItem>
       </Grid>
