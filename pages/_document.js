@@ -60,7 +60,7 @@ export default class MyDocument extends NextDocument {
           )}
         </Head>
 
-        <body>
+        <body style={{ overflowX: "hidden" }}>
           <Main />
           <NextScript />
         </body>
