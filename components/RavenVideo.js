@@ -35,7 +35,7 @@ export default function Raven() {
   }, []);
   return (
     <Box filter={filterImage} onContextMenu={(e) => e.preventDefault()}>
-      <video id="player" autoPlay loop muted playsInline>
+      <video id="player" autoPlay loop muted playsInline crossOrigin="true">
         {/* <source src="/raven/raven-HEVC-safari.mov" type="video/webm" /> */}
       </video>
     </Box>
