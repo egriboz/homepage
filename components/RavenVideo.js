@@ -29,12 +29,12 @@ export default function Raven() {
       }
       if (!isIE11()) {
         const player = document.getElementById('player');
-        player.src = supportsHEVCAlpha() ? '/raven.mp4': '/raven/raven.webm';
+        player.src = supportsHEVCAlpha() ? '/raven/raven-HEVC-safari.mov': '/raven/raven.webm';
       } 
       //
   }, []);
   return (
-    <Box filter={filterImage} >
+    <Box filter={filterImage}>
       <video id="player" autoPlay loop muted playsInline="1" crossOrigin="true">
         {/* <source src="/raven/raven-HEVC-safari.mov" type="video/webm" /> */}
       </video>

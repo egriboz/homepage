@@ -13,7 +13,7 @@ import {
   GridItem,
 } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "../components/ColorModeSwitcher";
-import RavenVideo from "../components/RavenVideo";
+// import RavenVideo from "../components/RavenVideo";
 import Raven from "../components/Raven";
 import Socials from "../components/Socials";
 import SiteConfig from "../site.config";
@@ -61,8 +61,8 @@ function Home() {
           pos="relative"
         >
           <Flex align="center" height="100vh" justify="center">
-            {/* <Raven /> */}
-            <RavenVideo/>
+            <Raven />
+            {/* <RavenVideo/> */}
           </Flex>
         </GridItem>
         <GridItem p="20px" rowSpan={{ sm: "1", md: "3" }}>
