@@ -90,8 +90,9 @@ function Home() {
               Hello!
             </Text>
             <Link
-              pt="30px"
+              mt="30px"
               pl="5px"
+              pr="5px"
               mb="30px"
               href={`mailto:${SiteConfig.author.email}`}
               isExternal
@@ -126,8 +127,7 @@ function Home() {
             maxW="100%"
             lineHeight="normal"
           >
-            I work and play with design and code in hopes of making the kids
-            proud.
+            {SiteConfig.content}
           </Text>
           <Socials
             p={{ base: "50px 0px 50px 10px", md: "30px 0px 5px 50px" }}
